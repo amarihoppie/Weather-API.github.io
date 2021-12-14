@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewpoint" content="width=device-width, inital-scale 1.0" >
+<meta http-equiv= x-ua-compatible content= "ie=edge" />
+<link rel="stylesheet" href="indexcss.css" >
+<title>Weather App</title>
+</head>
+<body onload="initClock()">
+    <div class="container">
+        <div class="app-title">
+            <p>Weather</p>
+        </div>
+        <div class="notification"></div>
+        <div class="weather-container">
+            <div class="weather-icon">
+                <img src="icon/unknown.png" alt=""/>
+            </div>
+            <div class="temperature-value">
+                <p>- °<span>F</span></p>
+            </div>
+            <div class="temperature-description">
+                <p>-</p>
+            </div>
+            <div class="location">
+                <p>-</p>
+            </div>
+        </div>
+    </div>
+    <div class="clock">
+        <div class="date">
+            <span id="dayname">Day</span>,
+            <span id="mon">Month</span>
+            <span id="daynum">00</span>,
+            <span id="ye">Year</span>
+        </div>
+        <div class="time">
+            <span id="hour">00</span>:
+            <span id="minutes">00</span>:
+            <span id="seconds">00</span>
+            <span id="period">AM</span>
+        </div>
+    </div>
+   <script type="text/javascript">
+       function updateClock(){
+            var now = new Date();
+            var dname = now.getDay();
+            var month = now.getMonth();
+            var DateNum = now.getDate();
+            var year = now.getFullYear();
+            var ho = now.getHours();
+            var min = now.getMinutes();
+            var sec = now.getSeconds();
+            var pe = "AM";
+
+            if(ho == 0){
+                ho=12;
+            }
+            if(ho > 12){
+                ho = ho -12;
+                pe = "PM";
+            }
+
+            Number.prototype.pad = function(digits){
+                for(var n = this.toString();n.length < digits; n = 0 + n);
+                return n;
+            } 
+            
+            var months = ["January","February","March","April","May","June","July","August","September","October", "November","December"];
+            var week = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            var ids = ["dayname","mon","daynum","ye","hour","minutes","seconds","period"];
+            var values = [week[dname],months[month],DateNum.pad(2),year,ho.pad(2),min.pad(2),sec.pad(2),pe];
+            for(var i = 0; i < ids.length; i++)
+            document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+        }
+
+    function initClock(){
+        updateClock();
+        window.setInterval("updateClock()", 1);
+    }
+   </script> 
+<script src="indexjs.js"></script>
+</body>    
+</html>

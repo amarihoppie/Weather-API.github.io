@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(to right,#1850dc, #7c90c4,#1850dc);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+    width: 310px;
+    background-color: white;
+    border: 2px solid #2E94E3;
+    display: block;
+    margin: 0 auto;
+    margin-top: 100px;
+    border-radius: 5px; 
+    padding-bottom: 50px;
+}
+
+.app-title {
+    width: 300px;
+    height: 50px;
+    border-radius: 10px 10px 0 0;
+}
+
+.app-title p {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 15px;
+    margin: 0 auto;
+    font-size: 1.6em;
+    color: black;
+}
+
+.notification {
+    background-color: rgb(224, 136, 136);
+    display: none;
+}
+
+.notification p{
+    color: red;
+    font-size: 1.2em;
+    margin: 0;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.weather-container{
+    width: 300px;
+    height: 260px;
+    background-color: white;
+}
+
+.weather-icon{
+    width: 300px;
+    height: 128px;
+}
+
+.weather-icon img {
+    display: block;
+    margin: 0 auto;
+}
+
+.temperature-value{
+    width: 300px;
+    height: 60px;
+}
+
+.temperature-value p{
+    padding: 0;
+    margin: 0;
+    color: blue;
+    font-size: 4em;
+    text-align: center;
+}
+
+.temperature-value span{
+    color: blue;
+    font-size: .6em;
+}
+
+.temperature-description {
+    padding: 8px;
+    margin: 0;
+    text-align: center;
+}
+
+.temperature-description p{
+    padding: 8px;
+    margin: 0;
+    color: black;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+.location p{
+    margin: 0;
+    padding: 0;
+    color: blue;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.clock{
+    font-family: "Segoe UI", sans-serif;
+    width: 400px;
+    background-color: white;
+    display: block;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 3px solid #2E94E3;
+    border-radius: 5px;
+    padding: 15px 10px;
+}
+
+.date{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.time{
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time span:not(:last-child){
+    position: relative;
+    margin: 0 6px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.time span:last-child{
+    background: #2E94E3;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding: 0 5px;
+    border-radius: 3px;
+}
